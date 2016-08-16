@@ -1,0 +1,2157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Zoho_CRM_API_Library package &mdash; Zoho CRM Client Library 1.0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Zoho CRM Client Library 1.0.1 documentation" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="zoho-crm-api-library-package">
+<h1>Zoho_CRM_API_Library package<a class="headerlink" href="#zoho-crm-api-library-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-Zoho_CRM_API_Library.zohoapimethods">
+<span id="zoho-crm-api-library-zohoapimethods-module"></span><h2>Zoho_CRM_API_Library.zohoapimethods module<a class="headerlink" href="#module-Zoho_CRM_API_Library.zohoapimethods" title="Permalink to this headline">¶</a></h2>
+<p>Created on 26 May 2016
+&#64;author: Adarsh Suresh Mangalath</p>
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.convert_lead">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">convert_lead</code><span class="sig-paren">(</span><em>zclient</em>, <em>id</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.convert_lead" title="Permalink to this definition">¶</a></dt>
+<dd><p>To convert a lead to contact/account/potential.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the lead record to be updated.</li>
+<li><strong>data</strong> (<em>dict</em>) &#8211; <p>Data to be inserted in a list of dicts.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{
+&#8220;overwrite&#8221;: true,
+&#8220;notify_lead_owner&#8221;: true,
+&#8220;notify_new_entity_owner&#8221;: true,
+&#8220;account&#8221;: &#8220;1000000112248&#8221;,
+&#8220;contact&#8221;: &#8220;1000000112250&#8221;,
+&#8220;assign_to&#8221;: &#8220;1000000028468&#8221;,
+&#8220;potential&#8221;:
+{
+&#8220;Campaign_Source&#8221;: &#8220;1000000112256&#8221;,
+&#8220;Potential_Name&#8221;: &#8220;Potential_Name0&#8221;,
+&#8220;Closing_Date&#8221;: &#8220;2016-02-18&#8221;,
+&#8220;Stage&#8221;: &#8220;Stage0&#8221;,
+&#8220;Amount&#8221;: 56.6
+}
+}]</p>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;data&#8221;: [{&#8220;potential&#8221;: &#8220;1000000235001&#8221;,&#8221;account&#8221;: &#8220;1000000112248&#8221;,&#8221;contact&#8221;: &#8220;1000000112250&#8221;}]}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.delete">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">delete</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>To delete the particular entity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module of the record to be deleted.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record to be deleted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;message&#8221;: &#8220;record deleted&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.delete_relation">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">delete_relation</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em>, <em>related_record_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.delete_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>To delete the association between modules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+<li><strong>module_id</strong> (<em>str</em>) &#8211; Id of the record that has to be updated in the module.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg. {&#8220;data&#8221;: [{&#8220;message&#8221;: &#8220;relation removed&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}]}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.download_file">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">download_file</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file_id</em>, <em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module from which the file has to be download.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record  from where the file should be downloaded.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Related list id of attachments feteched from the relations in the metadata of the module.</li>
+<li><strong>file_id</strong> (<em>str</em>) &#8211; Id of the file from related list records of attachments.</li>
+<li><strong>file_name</strong> (<em>str</em>) &#8211; Filename of the file from related list records of attachments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.download_photo">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">download_photo</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.download_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download the photo associated with a Lead/Contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module from which photo to be downloaded.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record from which photo should be downloaded.</li>
+<li><strong>filename</strong> (<em>str</em>) &#8211; (Optional)FileName under which the file should be saved (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">e.g /Users/path/stored/filename.jpg or if left empty will be stored as {id}.png.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.get">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">get</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id=None</em>, <em>headers={}</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the records from a module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be fetched.</li>
+<li><strong>id</strong> &#8211; (Optional) Id of the record to be fetched.</li>
+<li><strong>headers</strong> &#8211; (Optional) HTTP headers for request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">{If-Modified-Since:last modified time}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> &#8211; (Optional) HTTP parameters for request.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">sort_by, fields (comma separated), sort_order (asc or desc), converted (true or false), approved (true or false), page(1,2..),per_page(200)
+e.g {sort_order: asc}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with fetched records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.get_deleted">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">get_deleted</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.get_deleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the deleted records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module from which deleted records should be fetched.</li>
+<li><strong>params</strong> &#8211; (Optinal) HTTP parameters for the request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg: {type: all|recycle|permanent} - recycle bin records or permanently deleted records</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with deleted records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.insert">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">insert</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert a new entity into the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be inserted.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;Last_Nam&#8221;:&#8221;Last_Name&#8221;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObject with inserted records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.insert_notes">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">insert_notes</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.insert_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert a note the records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>datalist</strong> (<em>list</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.layouts">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">layouts</code><span class="sig-paren">(</span><em>zclient</em>, <em>id=None</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.layouts" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the layouts associated with the particular module or to get the particular layout details.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>id</strong> &#8211; (Optional) Id of the layout to be fetched.</li>
+<li><strong>params</strong> &#8211; HTTP parameter for get request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">module={MODULE}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns a list of ZObject with layout details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.loadmodules">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">loadmodules</code><span class="sig-paren">(</span><em>zclient</em>, <em>rfile=True</em>, <em>modules=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.loadmodules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all module details for easy use of the ZohoCRM APIs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>rfile</strong> &#8211; Depending on the value fetches from the server or local file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">True : Tries to fetch from local and if unavailable fetches from the server.
+False: Fetched from the server and updates the local file.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modules</strong> (<em>list</em>) &#8211; (Optional) List of strings use only if perticular modules is needed to be loaded.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict with the metadata.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.metadata">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">metadata</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the meta data (fields, related list, module, layouts data) for the modules (Contacts,Leads).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module of the layout to be fetched.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A json array with module&#8217;s metadata.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It list all the fields available, related list for that user. For insert and update apis , use &#8221; api_name&#8221; in the json data.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.modules">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">modules</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the module related data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array) with module details.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:list</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The key &#8220;api_name&#8221; in each module will be used to access the resource.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.related_list">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">related_list</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.related_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the related list records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">related_module: Leads | related_id: 3000000029001 | module: Notes | related_list_id: 3000000013433/
+The function will fetch the Notes which are located under the lead with id 3000000029001 and Note&#8217;s related list id is 3000000013433</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.roles">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">roles</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the contact roles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.search">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">search</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>To search the records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module to which searched.</li>
+<li><strong>params</strong> &#8211; HTTP parameters for the request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Search By Criteria
+criteria = (({apiname}:{starts_with|equals}:{value}) and ({apiname}:{starts_with|equals}:{value}))...
+Global Search By Email (all the email fields in particular module)
+email = {email}
+Global Search By Phone (similar to email)
+phone = {phone}
+Global Search By Word (searching on all the fields in particular module)
+word = {word}
+** all the get api supported params are available (fields, converted, approved, page, per_page)**</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with fetched records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.tab_groups">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">tab_groups</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.tab_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the tab groups.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.taxes">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">taxes</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.taxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the taxes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.update">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">update</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>To update an existing record in the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be updated.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;id&#8221;:&#8221;410888000000482039&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;id&#8221;:&#8221;410888000000482040&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with updated records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.update_notes">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">update_notes</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.update_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert a note the records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>datalist</strong> (<em>list</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.update_relation">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">update_relation</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em>, <em>related_record_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.update_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>To update the relation between the records</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+<li><strong>module_id</strong> (<em>str</em>) &#8211; Id of the record that has to be updated in the module.</li>
+<li><strong>datalist</strong> (<em>list</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObject with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Supported Modules :
+Campaigns -&gt; Leads, Contacts
+Products -&gt; Leads, Contacts, Accounts, Potentials, Price Books
+or their reverse as in Leads -&gt; Campaings , Products
+Sample Data For Adding Relation Between Leads, Campaigns (Not Mandatory, you can send the request without body)
+datalist:[ {&#8220;Status&#8221; : &#8220;active&#8221;}]
+Sample Data For Adding Relation Between Contact, Potentials (Mandatory, you need to send body)
+datalist :[ {&#8220;Contact_Role&#8221; : &#8220;1000000024229&#8221;}]
+Sample Data For Adding Relation Between Products, Price_Books (Mandatory, you need to send body)
+datalist :[ {&#8220;list_price&#8221; : 50.56}]
+Adding Relation Between Other Modules, Need Not To Send The Body</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.upload_file">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">upload_file</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload a file (as MULTIPART) as attachment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the file has to be uploaded .</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record where the file should be added.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Related list id of attachments fetched from the relations in the metadata of the module.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Filename of the uploading file (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns a dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;message&#8221;: &#8220;attachment uploaded successfully&#8221;,&#8221;details&#8221;: {&#8220;id&#8221;:&#8221;1000000033547&#8221;},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.upload_photo">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">upload_photo</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.upload_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload a photo (as MULTIPART) to a record in Leads or Contacts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record has to be updated.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record where the photo should be added.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Filename of the photo (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg: {&#8220;message&#8221;: &#8220;photo uploaded successfully&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<p>:rtype:dict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.upsert">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">upsert</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.upsert" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert the record if not exists already (checked based on duplicate check). If the records exists , then it&#8217;ll be updated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be upsert.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;id&#8221;:&#8221;410888000000482039&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;id&#8221;:&#8221;410888000000482040&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;,&#8221;Email&#8221;:&#8221;<a class="reference external" href="mailto:sriram&#46;rajamanickam&#37;&#52;&#48;zohocorp&#46;com">sriram<span>&#46;</span>rajamanickam<span>&#64;</span>zohocorp<span>&#46;</span>com</a>&#8220;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObject with upserted records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="Zoho_CRM_API_Library.zohoapimethods.users">
+<code class="descclassname">Zoho_CRM_API_Library.zohoapimethods.</code><code class="descname">users</code><span class="sig-paren">(</span><em>zclient</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoapimethods.users" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the users in the organization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>params</strong> &#8211; (Optional) Parameters for the user get requests.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">type={AllUsers|ActiveUsers|DeactiveUsers|ConfirmedUsers|NotConfirmedUsers|DeletedUsers|ActiveConfirmedUsers|AdminUsers|ActiveConfirmedAdmins|CurrentUser}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-Zoho_CRM_API_Library.zohoclient">
+<span id="zoho-crm-api-library-zohoclient-module"></span><h2>Zoho_CRM_API_Library.zohoclient module<a class="headerlink" href="#module-Zoho_CRM_API_Library.zohoclient" title="Permalink to this headline">¶</a></h2>
+<p>Created on 26 May 2016
+&#64;author: Adarsh Suresh Mangalath</p>
+<dl class="class">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient">
+<em class="property">class </em><code class="descclassname">Zoho_CRM_API_Library.zohoclient.</code><code class="descname">ZClient</code><span class="sig-paren">(</span><em>client_id</em>, <em>client_secret</em>, <em>redirect_uri</em>, <em>access_token=None</em>, <em>refresh_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Performs requests to the Zoho CRM Rest API services.</p>
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.convert_lead">
+<code class="descname">convert_lead</code><span class="sig-paren">(</span><em>zclient</em>, <em>id</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.convert_lead" title="Permalink to this definition">¶</a></dt>
+<dd><p>To convert a lead to contact/account/potential.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the lead record to be updated.</li>
+<li><strong>data</strong> (<em>dict</em>) &#8211; <p>Data to be inserted in a list of dicts.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{
+&#8220;overwrite&#8221;: true,
+&#8220;notify_lead_owner&#8221;: true,
+&#8220;notify_new_entity_owner&#8221;: true,
+&#8220;account&#8221;: &#8220;1000000112248&#8221;,
+&#8220;contact&#8221;: &#8220;1000000112250&#8221;,
+&#8220;assign_to&#8221;: &#8220;1000000028468&#8221;,
+&#8220;potential&#8221;:
+{
+&#8220;Campaign_Source&#8221;: &#8220;1000000112256&#8221;,
+&#8220;Potential_Name&#8221;: &#8220;Potential_Name0&#8221;,
+&#8220;Closing_Date&#8221;: &#8220;2016-02-18&#8221;,
+&#8220;Stage&#8221;: &#8220;Stage0&#8221;,
+&#8220;Amount&#8221;: 56.6
+}
+}]</p>
+</div>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;data&#8221;: [{&#8220;potential&#8221;: &#8220;1000000235001&#8221;,&#8221;account&#8221;: &#8220;1000000112248&#8221;,&#8221;contact&#8221;: &#8220;1000000112250&#8221;}]}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>To delete the particular entity</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module of the record to be deleted.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record to be deleted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;message&#8221;: &#8220;record deleted&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.delete_relation">
+<code class="descname">delete_relation</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em>, <em>related_record_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.delete_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>To delete the association between modules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+<li><strong>module_id</strong> (<em>str</em>) &#8211; Id of the record that has to be updated in the module.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg. {&#8220;data&#8221;: [{&#8220;message&#8221;: &#8220;relation removed&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}]}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.download_file">
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file_id</em>, <em>file_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module from which the file has to be download.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record  from where the file should be downloaded.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Related list id of attachments feteched from the relations in the metadata of the module.</li>
+<li><strong>file_id</strong> (<em>str</em>) &#8211; Id of the file from related list records of attachments.</li>
+<li><strong>file_name</strong> (<em>str</em>) &#8211; Filename of the file from related list records of attachments.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">None</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.download_photo">
+<code class="descname">download_photo</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.download_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download the photo associated with a Lead/Contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module from which photo to be downloaded.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record from which photo should be downloaded.</li>
+<li><strong>filename</strong> (<em>str</em>) &#8211; (Optional)FileName under which the file should be saved (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">e.g /Users/path/stored/filename.jpg or if left empty will be stored as {id}.png.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id=None</em>, <em>headers={}</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the records from a module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be fetched.</li>
+<li><strong>id</strong> &#8211; (Optional) Id of the record to be fetched.</li>
+<li><strong>headers</strong> &#8211; (Optional) HTTP headers for request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">{If-Modified-Since:last modified time}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>params</strong> &#8211; (Optional) HTTP parameters for request.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">sort_by, fields (comma separated), sort_order (asc or desc), converted (true or false), approved (true or false), page(1,2..),per_page(200)
+e.g {sort_order: asc}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with fetched records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.get_deleted">
+<code class="descname">get_deleted</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.get_deleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the deleted records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module from which deleted records should be fetched.</li>
+<li><strong>params</strong> &#8211; (Optinal) HTTP parameters for the request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg: {type: all|recycle|permanent} - recycle bin records or permanently deleted records</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with deleted records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.insert">
+<code class="descname">insert</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert a new entity into the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be inserted.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;Last_Nam&#8221;:&#8221;Last_Name&#8221;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObject with inserted records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.insert_notes">
+<code class="descname">insert_notes</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.insert_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert a note the records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>datalist</strong> (<em>list</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.layouts">
+<code class="descname">layouts</code><span class="sig-paren">(</span><em>zclient</em>, <em>id=None</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.layouts" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the layouts associated with the particular module or to get the particular layout details.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>id</strong> &#8211; (Optional) Id of the layout to be fetched.</li>
+<li><strong>params</strong> &#8211; HTTP parameter for get request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">module={MODULE}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns a list of ZObject with layout details.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.loadmodules">
+<code class="descname">loadmodules</code><span class="sig-paren">(</span><em>zclient</em>, <em>rfile=True</em>, <em>modules=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.loadmodules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads all module details for easy use of the ZohoCRM APIs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>rfile</strong> &#8211; Depending on the value fetches from the server or local file.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">True : Tries to fetch from local and if unavailable fetches from the server.
+False: Fetched from the server and updates the local file.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>modules</strong> (<em>list</em>) &#8211; (Optional) List of strings use only if perticular modules is needed to be loaded.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict with the metadata.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.metadata">
+<code class="descname">metadata</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the meta data (fields, related list, module, layouts data) for the modules (Contacts,Leads).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module of the layout to be fetched.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A json array with module&#8217;s metadata.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">It list all the fields available, related list for that user. For insert and update apis , use &#8221; api_name&#8221; in the json data.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.modules">
+<code class="descname">modules</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the module related data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array) with module details.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:list</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The key &#8220;api_name&#8221; in each module will be used to access the resource.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.related_list">
+<code class="descname">related_list</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.related_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the related list records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">related_module: Leads | related_id: 3000000029001 | module: Notes | related_list_id: 3000000013433/
+The function will fetch the Notes which are located under the lead with id 3000000029001 and Note&#8217;s related list id is 3000000013433</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.roles">
+<code class="descname">roles</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.roles" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the contact roles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>To search the records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module to which searched.</li>
+<li><strong>params</strong> &#8211; HTTP parameters for the request.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Search By Criteria
+criteria = (({apiname}:{starts_with|equals}:{value}) and ({apiname}:{starts_with|equals}:{value}))...
+Global Search By Email (all the email fields in particular module)
+email = {email}
+Global Search By Phone (similar to email)
+phone = {phone}
+Global Search By Word (searching on all the fields in particular module)
+word = {word}
+** all the get api supported params are available (fields, converted, approved, page, per_page)**</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with fetched records.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions:For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.tab_groups">
+<code class="descname">tab_groups</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.tab_groups" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the tab groups.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.taxes">
+<code class="descname">taxes</code><span class="sig-paren">(</span><em>zclient</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.taxes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get all the taxes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>To update an existing record in the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be updated.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;id&#8221;:&#8221;410888000000482039&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;id&#8221;:&#8221;410888000000482040&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObjects with updated records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.update_relation">
+<code class="descname">update_relation</code><span class="sig-paren">(</span><em>zclient</em>, <em>related_module</em>, <em>related_id</em>, <em>module</em>, <em>relation_name</em>, <em>related_record_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.update_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>To update the relation between the records</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<em>ZClient Object</em>) &#8211; Client which makes the call.</li>
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module to which other are related.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Id of the record of related module.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record is related.</li>
+<li><strong>related_list_id</strong> (<em>str</em>) &#8211; Related list id feteched from the relations in the metadata of the module.</li>
+<li><strong>module_id</strong> (<em>str</em>) &#8211; Id of the record that has to be updated in the module.</li>
+<li><strong>datalist</strong> (<em>list</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObject with related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Supported Modules :
+Campaigns -&gt; Leads, Contacts
+Products -&gt; Leads, Contacts, Accounts, Potentials, Price Books
+or their reverse as in Leads -&gt; Campaings , Products
+Sample Data For Adding Relation Between Leads, Campaigns (Not Mandatory, you can send the request without body)
+datalist:[ {&#8220;Status&#8221; : &#8220;active&#8221;}]
+Sample Data For Adding Relation Between Contact, Potentials (Mandatory, you need to send body)
+datalist :[ {&#8220;Contact_Role&#8221; : &#8220;1000000024229&#8221;}]
+Sample Data For Adding Relation Between Products, Price_Books (Mandatory, you need to send body)
+datalist :[ {&#8220;list_price&#8221; : 50.56}]
+Adding Relation Between Other Modules, Need Not To Send The Body</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.upload_file">
+<code class="descname">upload_file</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload a file (as MULTIPART) as attachment.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the file has to be uploaded .</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record where the file should be added.</li>
+<li><strong>related_id</strong> (<em>str</em>) &#8211; Related list id of attachments fetched from the relations in the metadata of the module.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Filename of the uploading file (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Returns a dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:{&#8220;message&#8221;: &#8220;attachment uploaded successfully&#8221;,&#8221;details&#8221;: {&#8220;id&#8221;:&#8221;1000000033547&#8221;},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.upload_photo">
+<code class="descname">upload_photo</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>id</em>, <em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.upload_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload a photo (as MULTIPART) to a record in Leads or Contacts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>zclient</strong> (<a class="reference internal" href="#Zoho_CRM_API_Library.zohoclient.ZClient" title="Zoho_CRM_API_Library.zohoclient.ZClient"><em>ZClient</em></a>) &#8211; Client which makes the call.</li>
+<li><strong>module</strong> (<em>str</em>) &#8211; The module to which the record has to be updated.</li>
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the record where the photo should be added.</li>
+<li><strong>file</strong> (<em>str</em>) &#8211; Filename of the photo (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary with return message.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg: {&#8220;message&#8221;: &#8220;photo uploaded successfully&#8221;,&#8221;details&#8221;: {},&#8221;status&#8221;: &#8220;success&#8221;,&#8221;code&#8221;: &#8220;SUCCESS&#8221;}</p>
+</div>
+<p>:rtype:dict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.upsert">
+<code class="descname">upsert</code><span class="sig-paren">(</span><em>zclient</em>, <em>module</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.upsert" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert the record if not exists already (checked based on duplicate check). If the records exists , then it&#8217;ll be updated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>module</strong> &#8211; The module of the record to be upsert.</li>
+<li><strong>datalist</strong> &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">eg:[{&#8220;id&#8221;:&#8221;410888000000482039&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;},{&#8220;id&#8221;:&#8221;410888000000482040&#8221;,&#8221;Last_Name&#8221;:&#8221;Last_Name&#8221;,&#8221;Email&#8221;:&#8221;<a class="reference external" href="mailto:sriram&#46;rajamanickam&#37;&#52;&#48;zohocorp&#46;com">sriram<span>&#46;</span>rajamanickam<span>&#64;</span>zohocorp<span>&#46;</span>com</a>&#8220;}]</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of ZObject with upserted records information.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoclient.ZClient.users">
+<code class="descname">users</code><span class="sig-paren">(</span><em>zclient</em>, <em>params={}</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoclient.ZClient.users" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the users in the organization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>zclient</strong> &#8211; Client which makes the call.</li>
+<li><strong>params</strong> &#8211; (Optional) Parameters for the user get requests.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">type={AllUsers|ActiveUsers|DeactiveUsers|ConfirmedUsers|NotConfirmedUsers|DeletedUsers|ActiveConfirmedUsers|AdminUsers|ActiveConfirmedAdmins|CurrentUser}</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of json (json array)  with users details.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Zoho_CRM_API_Library.zohoobject">
+<span id="zoho-crm-api-library-zohoobject-module"></span><h2>Zoho_CRM_API_Library.zohoobject module<a class="headerlink" href="#module-Zoho_CRM_API_Library.zohoobject" title="Permalink to this headline">¶</a></h2>
+<p>Created on 26 May 2016
+&#64;author: Adarsh Suresh Mangalath</p>
+<dl class="class">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject">
+<em class="property">class </em><code class="descclassname">Zoho_CRM_API_Library.zohoobject.</code><code class="descname">ZObject</code><span class="sig-paren">(</span><em>zclient</em>, <em>jsondata</em>, <em>module</em>, <em>metadata={}</em>, <em>message=''</em>, <em>status=''</em>, <em>action=''</em>, <em>details=''</em>, <em>code=''</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Provides object related functionalities for each seperate record.Also provides dict like access for its object.</p>
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.convert_lead">
+<code class="descname">convert_lead</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.convert_lead" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a lead with the given data.</p>
+<p>:param <a class="reference external" href="data:Data">data:Data</a> to be inserted in a list of dicts.
+:type data: dict
+:return: Converted details.
+:raises: Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete the record.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True or False depending on the server reply.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:bool</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.delete_relation">
+<code class="descname">delete_relation</code><span class="sig-paren">(</span><em>related_module</em>, <em>relation_name</em>, <em>related_record_id</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.delete_relation" title="Permalink to this definition">¶</a></dt>
+<dd><p>To delete a relation between two records.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module of related record.</li>
+<li><strong>relation_name</strong> (<em>str</em>) &#8211; List_relation_id of the module.</li>
+<li><strong>related_record_id</strong> (<em>str</em>) &#8211; Id of the related record.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>:return:A dictionary with return message.
+:raises: Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.download_file">
+<code class="descname">download_file</code><span class="sig-paren">(</span><em>fileid</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download an attachment from the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileid</strong> (<em>str</em>) &#8211; Id of the file.</li>
+<li><strong>filename</strong> (<em>str</em>) &#8211; Filename of the file (full path or absolute path).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Bool depending whther the action occured or not</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.download_photo">
+<code class="descname">download_photo</code><span class="sig-paren">(</span><em>file=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.download_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To download a photo from the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Filename of the photo (full path or absolute path).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Bool depending whther the action occured or not</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.insert_notes">
+<code class="descname">insert_notes</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.insert_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert notes into the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>dict</em>) &#8211; Notes data to be inserted.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Note object in the list.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.outputJSON">
+<code class="descname">outputJSON</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.outputJSON" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all the values from the dict and construct a json for senting to server side.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary which can be passed to insert , update and upsert methods.</td>
+</tr>
+</tbody>
+</table>
+<p>:rtype:dict</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.properties">
+<code class="descname">properties</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.properties" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the list of all the fields of a record.
+:returns: A list of all the fields.
+:rtype:list</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.related_list">
+<code class="descname">related_list</code><span class="sig-paren">(</span><em>related_module</em>, <em>relation_name</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.related_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>To retreive the related list of the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>related_module</strong> (<em>str</em>) &#8211; Related module of the record.</li>
+<li><strong>relation_name</strong> (<em>int or str</em>) &#8211; Id  provided in the metadata of the module as list_relation_id.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with the related module.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the record with the new values.
+:return: None
+:raises: Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.update_notes">
+<code class="descname">update_notes</code><span class="sig-paren">(</span><em>id</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.update_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>To insert notes in the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> (<em>str</em>) &#8211; Id of the module to be updated</li>
+<li><strong>data</strong> (<em>dict</em>) &#8211; Notes data to be updated.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of updated notes</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.update_relation">
+<code class="descname">update_relation</code><span class="sig-paren">(</span><em>related_module</em>, <em>relation_name</em>, <em>related_record_id</em>, <em>datalist</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.update_relation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>To add a new relation to the module.</dt>
+<dd><dl class="first last docutils">
+<dt>..note:: Supported Modules</dt>
+ <span class="classifier-delimiter">:</span> <span class="classifier">Campaigns -&gt; Leads, Contacts</span><dd>Products -&gt; Leads, Contacts, Accounts, Potentials, Price Books
+or their reverse as in Leads -&gt; Campaings , Products</dd>
+</dl>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>related_module</strong> (<em>str</em>) &#8211; The module of related record.</li>
+<li><strong>relation_name</strong> (<em>str</em>) &#8211; Relation name of the module.</li>
+<li><strong>related_record_id</strong> (<em>str</em>) &#8211; Id of the related record.</li>
+<li><strong>datalist</strong> (<em>dict</em>) &#8211; Data to be inserted in a list of dicts.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list of ZObjects with the related records.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">list</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.upload_file">
+<code class="descname">upload_file</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.upload_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload an attachment into the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Filename of the file to be uploaded (full path or absolute path).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Bool depending whther the action occured or not.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoobject.ZObject.upload_photo">
+<code class="descname">upload_photo</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoobject.ZObject.upload_photo" title="Permalink to this definition">¶</a></dt>
+<dd><p>To upload a photo into the module.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Filename of the photo (full path or absolute path).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Bool depending whther the action occured or not</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body">Zoho Exceptions: For all invalid requests see http status codes for Zoho CRM APIs for more details.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Zoho_CRM_API_Library.zohoutils">
+<span id="zoho-crm-api-library-zohoutils-module"></span><h2>Zoho_CRM_API_Library.zohoutils module<a class="headerlink" href="#module-Zoho_CRM_API_Library.zohoutils" title="Permalink to this headline">¶</a></h2>
+<p>Created on 26 May 2016
+&#64;author: Adarsh Suresh Mangalath</p>
+<dl class="class">
+<dt id="Zoho_CRM_API_Library.zohoutils.ZAccounts">
+<em class="property">class </em><code class="descclassname">Zoho_CRM_API_Library.zohoutils.</code><code class="descname">ZAccounts</code><span class="sig-paren">(</span><em>client_id</em>, <em>client_secret</em>, <em>redirect_uri</em>, <em>refresh_token=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoutils.ZAccounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Provides Accounts related functionalities for APIs.</p>
+<dl class="method">
+<dt id="Zoho_CRM_API_Library.zohoutils.ZAccounts.get_access_token">
+<code class="descname">get_access_token</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoutils.ZAccounts.get_access_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>To get the access token from the refresh token
+:returns: A new access token.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="Zoho_CRM_API_Library.zohoutils.ZohoError">
+<em class="property">exception </em><code class="descclassname">Zoho_CRM_API_Library.zohoutils.</code><code class="descname">ZohoError</code><span class="sig-paren">(</span><em>url</em>, <em>status</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#Zoho_CRM_API_Library.zohoutils.ZohoError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">exceptions.Exception</span></code></p>
+<p>Base Zoho API exception</p>
+<dl class="attribute">
+<dt id="Zoho_CRM_API_Library.zohoutils.ZohoError.message">
+<code class="descname">message</code><em class="property"> = u'Error occurred for {url}. Error Code: {code} Response content: {content}'</em><a class="headerlink" href="#Zoho_CRM_API_Library.zohoutils.ZohoError.message" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-Zoho_CRM_API_Library">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-Zoho_CRM_API_Library" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Zoho_CRM_API_Library package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-Zoho_CRM_API_Library.zohoapimethods">Zoho_CRM_API_Library.zohoapimethods module</a></li>
+<li><a class="reference internal" href="#module-Zoho_CRM_API_Library.zohoclient">Zoho_CRM_API_Library.zohoclient module</a></li>
+<li><a class="reference internal" href="#module-Zoho_CRM_API_Library.zohoobject">Zoho_CRM_API_Library.zohoobject module</a></li>
+<li><a class="reference internal" href="#module-Zoho_CRM_API_Library.zohoutils">Zoho_CRM_API_Library.zohoutils module</a></li>
+<li><a class="reference internal" href="#module-Zoho_CRM_API_Library">Module contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Zoho_CRM_API_Library.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Adarsh Suresh Mangalath.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/Zoho_CRM_API_Library.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

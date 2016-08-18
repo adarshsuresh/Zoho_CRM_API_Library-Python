@@ -2,11 +2,11 @@ from unittest import TestCase
 from zohoclient import ZClient
 import json, os ,time,random
 
-client_id = '1000.5J0TRY46P0UT81407PZD4UGESRJLJH'
-client_secret = '1f1548b0b572dd7679898a502b208ae4823004de5e'
-redirect_uri= 'http://adarshsuresh-env.us-east-1.elasticbeanstalk.com/myindex.php'
-refresh_token = '1000.d33dbcdd56d9cfb2fb1b2e38646246e9.78817078b435c29e655b4d326374dd65'
-access_token = 'e6ab9925d15aa7a742800435ad515902'
+client_id = ''
+client_secret = ''
+redirect_uri= ''
+refresh_token = ''
+access_token = ''
 global_record_list={}
 myclient=None
 class TestZClient(TestCase):

@@ -30,7 +30,7 @@ from zohoapimethods import tab_groups
 from zohoapimethods import convert_lead
 from zohoapimethods import loadmodules
 
-_DEFAULT_ZOHO_URL = "https://crm.localzoho.com/crm/v2/"
+_DEFAULT_ZOHO_URL = ""
 
 
 class ZClient(object):
